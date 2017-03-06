@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F3383B41E6D950F0019FA10 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3383B31E6D950F0019FA10 /* Data.swift */; };
+		6F7E20DF1E2E47C900EF7098 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */; };
+		6FBB07B21E1CF29D0021BEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07B11E1CF29D0021BEFB /* AppDelegate.swift */; };
+		6FBB07B41E1CF29D0021BEFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07B31E1CF29D0021BEFB /* ViewController.swift */; };
+		6FBB07B71E1CF29D0021BEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBB07B51E1CF29D0021BEFB /* Main.storyboard */; };
+		6FBB07B91E1CF29D0021BEFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FBB07B81E1CF29D0021BEFB /* Assets.xcassets */; };
+		6FBB07BC1E1CF29D0021BEFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FBB07BA1E1CF29D0021BEFB /* LaunchScreen.storyboard */; };
+		6FBB07C41E1CF3390021BEFB /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07C31E1CF3390021BEFB /* GridViewCell.swift */; };
+		6FBB07C81E1CF42C0021BEFB /* SortableGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07C71E1CF42C0021BEFB /* SortableGridView.swift */; };
+		6FBB07CA1E1CF4A00021BEFB /* CellCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07C91E1CF4A00021BEFB /* CellCreator.swift */; };
+		6FBB07CC1E1CF5240021BEFB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07CB1E1CF5240021BEFB /* String.swift */; };
+		6FEE22591E1FE33E00BB5A84 /* SwiftSortableGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE22581E1FE33E00BB5A84 /* SwiftSortableGridView.swift */; };
+		6FEE225B1E24E59400BB5A84 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE225A1E24E59400BB5A84 /* UIColor.swift */; };
+		6FEE225D1E2538ED00BB5A84 /* ColumnsValuesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE225C1E2538ED00BB5A84 /* ColumnsValuesHelper.swift */; };
+		6FEE225F1E2539D800BB5A84 /* GridDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE225E1E2539D800BB5A84 /* GridDataObject.swift */; };
+		6FEE22611E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE22601E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift */; };
+		6FEE22651E292F8700BB5A84 /* GridViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEE22641E292F8700BB5A84 /* GridViewHeaderCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6F3383B31E6D950F0019FA10 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		6FBB07AE1E1CF29D0021BEFB /* SwiftSortableGridView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSortableGridView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FBB07B11E1CF29D0021BEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FBB07B31E1CF29D0021BEFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FBB07B61E1CF29D0021BEFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6FBB07B81E1CF29D0021BEFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FBB07BB1E1CF29D0021BEFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FBB07BD1E1CF29D0021BEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FBB07C31E1CF3390021BEFB /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		6FBB07C71E1CF42C0021BEFB /* SortableGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortableGridView.swift; sourceTree = "<group>"; };
+		6FBB07C91E1CF4A00021BEFB /* CellCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCreator.swift; sourceTree = "<group>"; };
+		6FBB07CB1E1CF5240021BEFB /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6FEE22581E1FE33E00BB5A84 /* SwiftSortableGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSortableGridView.swift; sourceTree = "<group>"; };
+		6FEE225A1E24E59400BB5A84 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6FEE225C1E2538ED00BB5A84 /* ColumnsValuesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnsValuesHelper.swift; sourceTree = "<group>"; };
+		6FEE225E1E2539D800BB5A84 /* GridDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridDataObject.swift; sourceTree = "<group>"; };
+		6FEE22601E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		6FEE22641E292F8700BB5A84 /* GridViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewHeaderCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FBB07AB1E1CF29C0021BEFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F3383B01E6D78200019FA10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6FEE225A1E24E59400BB5A84 /* UIColor.swift */,
+				6FBB07CB1E1CF5240021BEFB /* String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6F3383B11E6D78740019FA10 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6FBB07C91E1CF4A00021BEFB /* CellCreator.swift */,
+				6FBB07C71E1CF42C0021BEFB /* SortableGridView.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		6F3383B21E6D789B0019FA10 /* GridUtils */ = {
+			isa = PBXGroup;
+			children = (
+				6FEE225C1E2538ED00BB5A84 /* ColumnsValuesHelper.swift */,
+				6FEE225E1E2539D800BB5A84 /* GridDataObject.swift */,
+			);
+			name = GridUtils;
+			sourceTree = "<group>";
+		};
+		6F3383B51E6D9A850019FA10 /* MockGridData */ = {
+			isa = PBXGroup;
+			children = (
+				6F3383B31E6D950F0019FA10 /* Data.swift */,
+			);
+			name = MockGridData;
+			sourceTree = "<group>";
+		};
+		6FBB07A51E1CF29C0021BEFB = {
+			isa = PBXGroup;
+			children = (
+				6FBB07B01E1CF29D0021BEFB /* SwiftSortableGridView */,
+				6FBB07AF1E1CF29D0021BEFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FBB07AF1E1CF29D0021BEFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FBB07AE1E1CF29D0021BEFB /* SwiftSortableGridView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FBB07B01E1CF29D0021BEFB /* SwiftSortableGridView */ = {
+			isa = PBXGroup;
+			children = (
+				6F3383B01E6D78200019FA10 /* Extensions */,
+				6F3383B11E6D78740019FA10 /* Protocols */,
+				6F3383B21E6D789B0019FA10 /* GridUtils */,
+				6F3383B51E6D9A850019FA10 /* MockGridData */,
+				6FBB07B11E1CF29D0021BEFB /* AppDelegate.swift */,
+				6FBB07B31E1CF29D0021BEFB /* ViewController.swift */,
+				6FEE22581E1FE33E00BB5A84 /* SwiftSortableGridView.swift */,
+				6FEE22601E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift */,
+				6FEE22641E292F8700BB5A84 /* GridViewHeaderCell.swift */,
+				6FBB07C31E1CF3390021BEFB /* GridViewCell.swift */,
+				6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */,
+				6FBB07B51E1CF29D0021BEFB /* Main.storyboard */,
+				6FBB07B81E1CF29D0021BEFB /* Assets.xcassets */,
+				6FBB07BA1E1CF29D0021BEFB /* LaunchScreen.storyboard */,
+				6FBB07BD1E1CF29D0021BEFB /* Info.plist */,
+			);
+			path = SwiftSortableGridView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FBB07AD1E1CF29C0021BEFB /* SwiftSortableGridView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FBB07C01E1CF29D0021BEFB /* Build configuration list for PBXNativeTarget "SwiftSortableGridView" */;
+			buildPhases = (
+				6FBB07AA1E1CF29C0021BEFB /* Sources */,
+				6FBB07AB1E1CF29C0021BEFB /* Frameworks */,
+				6FBB07AC1E1CF29C0021BEFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSortableGridView;
+			productName = SwiftSortableGridView;
+			productReference = 6FBB07AE1E1CF29D0021BEFB /* SwiftSortableGridView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FBB07A61E1CF29C0021BEFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = com.kkontus;
+				TargetAttributes = {
+					6FBB07AD1E1CF29C0021BEFB = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 68PSFYW4WR;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6FBB07A91E1CF29C0021BEFB /* Build configuration list for PBXProject "SwiftSortableGridView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FBB07A51E1CF29C0021BEFB;
+			productRefGroup = 6FBB07AF1E1CF29D0021BEFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FBB07AD1E1CF29C0021BEFB /* SwiftSortableGridView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FBB07AC1E1CF29C0021BEFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FBB07BC1E1CF29D0021BEFB /* LaunchScreen.storyboard in Resources */,
+				6FBB07B91E1CF29D0021BEFB /* Assets.xcassets in Resources */,
+				6FBB07B71E1CF29D0021BEFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FBB07AA1E1CF29C0021BEFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FBB07B41E1CF29D0021BEFB /* ViewController.swift in Sources */,
+				6FEE22651E292F8700BB5A84 /* GridViewHeaderCell.swift in Sources */,
+				6FBB07B21E1CF29D0021BEFB /* AppDelegate.swift in Sources */,
+				6FEE22611E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift in Sources */,
+				6FBB07C41E1CF3390021BEFB /* GridViewCell.swift in Sources */,
+				6FEE225B1E24E59400BB5A84 /* UIColor.swift in Sources */,
+				6FBB07CC1E1CF5240021BEFB /* String.swift in Sources */,
+				6F3383B41E6D950F0019FA10 /* Data.swift in Sources */,
+				6F7E20DF1E2E47C900EF7098 /* PaddingLabel.swift in Sources */,
+				6FEE225F1E2539D800BB5A84 /* GridDataObject.swift in Sources */,
+				6FBB07CA1E1CF4A00021BEFB /* CellCreator.swift in Sources */,
+				6FEE225D1E2538ED00BB5A84 /* ColumnsValuesHelper.swift in Sources */,
+				6FBB07C81E1CF42C0021BEFB /* SortableGridView.swift in Sources */,
+				6FEE22591E1FE33E00BB5A84 /* SwiftSortableGridView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6FBB07B51E1CF29D0021BEFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FBB07B61E1CF29D0021BEFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6FBB07BA1E1CF29D0021BEFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FBB07BB1E1CF29D0021BEFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FBB07BE1E1CF29D0021BEFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FBB07BF1E1CF29D0021BEFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FBB07C11E1CF29D0021BEFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 68PSFYW4WR;
+				INFOPLIST_FILE = SwiftSortableGridView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kkontus.SwiftSortableGridView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6FBB07C21E1CF29D0021BEFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 68PSFYW4WR;
+				INFOPLIST_FILE = SwiftSortableGridView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kkontus.SwiftSortableGridView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FBB07A91E1CF29C0021BEFB /* Build configuration list for PBXProject "SwiftSortableGridView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FBB07BE1E1CF29D0021BEFB /* Debug */,
+				6FBB07BF1E1CF29D0021BEFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FBB07C01E1CF29D0021BEFB /* Build configuration list for PBXNativeTarget "SwiftSortableGridView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FBB07C11E1CF29D0021BEFB /* Debug */,
+				6FBB07C21E1CF29D0021BEFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FBB07A61E1CF29C0021BEFB /* Project object */;
+}
