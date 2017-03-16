@@ -11,4 +11,6 @@ class GridDataObject {
     var lastname: String = ""
     var age: String = ""
     var dateOfBirth: String = ""
+    var address: String = ""
+    var email: String = ""
 }

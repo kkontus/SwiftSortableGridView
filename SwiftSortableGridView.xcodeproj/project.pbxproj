@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F2D7E721E7AD464007A4BA2 /* GridConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D7E711E7AD464007A4BA2 /* GridConfig.swift */; };
 		6F3383B41E6D950F0019FA10 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3383B31E6D950F0019FA10 /* Data.swift */; };
 		6F7E20DF1E2E47C900EF7098 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */; };
 		6FBB07B21E1CF29D0021BEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB07B11E1CF29D0021BEFB /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F2D7E711E7AD464007A4BA2 /* GridConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridConfig.swift; sourceTree = "<group>"; };
 		6F3383B31E6D950F0019FA10 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6FBB07AE1E1CF29D0021BEFB /* SwiftSortableGridView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSortableGridView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F043CE61E7A944400C82BEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FEE22641E292F8700BB5A84 /* GridViewHeaderCell.swift */,
+				6FBB07C31E1CF3390021BEFB /* GridViewCell.swift */,
+				6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		6F3383B01E6D78200019FA10 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,13 +129,12 @@
 				6F3383B11E6D78740019FA10 /* Protocols */,
 				6F3383B21E6D789B0019FA10 /* GridUtils */,
 				6F3383B51E6D9A850019FA10 /* MockGridData */,
+				6F043CE61E7A944400C82BEF /* Views */,
 				6FBB07B11E1CF29D0021BEFB /* AppDelegate.swift */,
+				6F2D7E711E7AD464007A4BA2 /* GridConfig.swift */,
 				6FBB07B31E1CF29D0021BEFB /* ViewController.swift */,
 				6FEE22581E1FE33E00BB5A84 /* SwiftSortableGridView.swift */,
 				6FEE22601E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift */,
-				6FEE22641E292F8700BB5A84 /* GridViewHeaderCell.swift */,
-				6FBB07C31E1CF3390021BEFB /* GridViewCell.swift */,
-				6F7E20DE1E2E47C900EF7098 /* PaddingLabel.swift */,
 				6FBB07B51E1CF29D0021BEFB /* Main.storyboard */,
 				6FBB07B81E1CF29D0021BEFB /* Assets.xcassets */,
 				6FBB07BA1E1CF29D0021BEFB /* LaunchScreen.storyboard */,
@@ -208,6 +219,7 @@
 				6FBB07B41E1CF29D0021BEFB /* ViewController.swift in Sources */,
 				6FEE22651E292F8700BB5A84 /* GridViewHeaderCell.swift in Sources */,
 				6FBB07B21E1CF29D0021BEFB /* AppDelegate.swift in Sources */,
+				6F2D7E721E7AD464007A4BA2 /* GridConfig.swift in Sources */,
 				6FEE22611E291E6400BB5A84 /* StickyHeadersCollectionViewFlowLayout.swift in Sources */,
 				6FBB07C41E1CF3390021BEFB /* GridViewCell.swift in Sources */,
 				6FEE225B1E24E59400BB5A84 /* UIColor.swift in Sources */,

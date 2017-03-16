@@ -19,6 +19,13 @@ class GridViewCell: UICollectionViewCell, CellCreator {
         return label
     }()
     
+    private let sortIcon: UIImageView = {
+        let image = UIImage(named: GridConfig.ascending)
+        let imageView = UIImageView(image: image!)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     class var identifier: String {
         return String.className(self)
     }
@@ -36,12 +43,16 @@ class GridViewCell: UICollectionViewCell, CellCreator {
         nameLabel.font = UIFont.systemFont(ofSize: fontSize)
         
         addSubview(nameLabel)
-        //addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
-        //addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
+        addSubview(sortIcon)
         
         nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
         nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        
+        sortIcon.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        sortIcon.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        sortIcon.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        sortIcon.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     func setData(_ data: Any?) {
@@ -60,7 +71,19 @@ class GridViewCell: UICollectionViewCell, CellCreator {
         }
     }
     
-    func setup(_ indexPath: IndexPath, range: NSRange, rangeFooter: NSRange) {
+    func setup(_ indexPath: IndexPath, range: NSRange, rangeFooter: NSRange, sortOrderIcon: String?, sortOrderColumn: Int?) {
+        if let row = sortOrderColumn {
+            if row == indexPath.row {
+                let image = UIImage(named: sortOrderIcon!)
+                sortIcon.alpha = 1.0
+                sortIcon.image = image
+            } else {
+                sortIcon.alpha = 0.0
+            }
+        } else {
+            sortIcon.alpha = 0.0
+        }
+        
         if indexPath.row >= range.location && indexPath.row <= range.length {
             self.backgroundColor = UIColor.headerCell
             nameLabel.textColor = UIColor.headerCellText
@@ -81,14 +104,13 @@ class GridViewCell: UICollectionViewCell, CellCreator {
             if self.backgroundColor == UIColor.sortAppliedCell {
                 self.backgroundColor = UIColor.headerCell
                 nameLabel.textColor = UIColor.headerCellText
-                
-                delegate?.sortGridView(sortOrder, column: indexPath.row, columnName: columnName)
             } else {
                 self.backgroundColor = UIColor.sortAppliedCell
                 nameLabel.textColor = UIColor.headerCellText
-                
-                delegate?.sortGridView(sortOrder, column: indexPath.row, columnName: columnName)
             }
+            
+            let order = selectSortOrderImageName(sortOrder: sortOrder)
+            delegate?.sortGridView(sortOrder, column: indexPath.row, columnName: columnName, sortOrderIcon: order, sortOrderColumn: indexPath.row)
         } else if indexPath.row >= rangeFooter.location && indexPath.row <= rangeFooter.length {
             self.backgroundColor = UIColor.footerCell
             nameLabel.textColor = UIColor.footerCellText
@@ -96,6 +118,17 @@ class GridViewCell: UICollectionViewCell, CellCreator {
             self.backgroundColor = UIColor.dataCell
             nameLabel.textColor = UIColor.dataCellText
         }
+    }
+    
+    private func selectSortOrderImageName(sortOrder: Bool) -> String {
+        var order: String
+        if sortOrder {
+            order = GridConfig.descending
+        } else {
+            order = GridConfig.ascending
+        }
+        
+        return order
     }
     
 }

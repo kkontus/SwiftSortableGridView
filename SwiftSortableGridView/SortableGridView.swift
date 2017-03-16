@@ -7,11 +7,11 @@
 //
 
 protocol SortableGridView : class {
-    func sortGridView(_ order: Bool, column: Int, columnName: String?)
+    func sortGridView(_ order: Bool, column: Int, columnName: String?, sortOrderIcon: String?, sortOrderColumn: Int?)
 }
 
 extension SortableGridView {
-    func sortGridView(_ order: Bool, column: Int, columnName: String?) {
+    func sortGridView(_ order: Bool, column: Int, columnName: String?, sortOrderIcon: String?, sortOrderColumn: Int?) {
         
     }
 }

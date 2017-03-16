@@ -22,6 +22,8 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
     var gridCellHeight: CGFloat = 0.0
     var numberOfColumns: Int = 0
     var sortOrder = false
+    var sortOrderIcon: String? = GridConfig.defaultOrder // do not translate this, it is an image set name
+    var sortOrderColumn: Int? = GridConfig.defaultColumn
     var useStickyHeader: Bool = true
     
     
@@ -59,6 +61,8 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
             items.append(element.lastname)
             items.append(element.age)
             items.append(element.dateOfBirth)
+            items.append(element.address)
+            items.append(element.email)
         }
         
         reloadGrid()
@@ -92,7 +96,7 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
         layout.scrollDirection = UICollectionViewScrollDirection.vertical
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets.zero
         layout.itemSize = CGSize(width: self.gridCellWidth, height: self.gridCellHeight)
         
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -127,9 +131,9 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
         
         let numberOfItems = items.count
         if useStickyHeader {
-            cell.setup(indexPath, range: cell.createColumnRange(0), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems))
+            cell.setup(indexPath, range: cell.createColumnRange(0), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems), sortOrderIcon: sortOrderIcon, sortOrderColumn: sortOrderColumn)
         } else {
-            cell.setup(indexPath, range: cell.createColumnRange(numberOfColumns), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems))
+            cell.setup(indexPath, range: cell.createColumnRange(numberOfColumns), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems), sortOrderIcon: sortOrderIcon, sortOrderColumn: sortOrderColumn)
         }
         cell.delegate = delegate //we need this so we can sort collection view in controller, not in cell definition class
         
@@ -145,6 +149,8 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
             supplementaryView.column2.text = gridColumns[1]
             supplementaryView.column3.text = gridColumns[2]
             supplementaryView.column4.text = gridColumns[3]
+            supplementaryView.column4.text = gridColumns[4]
+            supplementaryView.column5.text = gridColumns[5]
             
             return supplementaryView
         }

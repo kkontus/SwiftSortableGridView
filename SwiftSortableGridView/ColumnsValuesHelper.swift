@@ -11,4 +11,6 @@ class ColumnsValuesHelper {
     static let columnLastname = "Lastname"
     static let columnAge = "Age"
     static let columnDateOfBirth = "DateOfBirth"
+    static let columnAddress = "Address"
+    static let columnEmail = "Email"
 }
