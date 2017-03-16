@@ -47,6 +47,13 @@ class GridViewHeaderCell: UICollectionReusableView, CellCreator {
         return label
     }()
     
+    let column6: PaddingLabel = {
+        let label = PaddingLabel(padding: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5))
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     class var identifier: String {
         return String.className(self)
     }
@@ -66,12 +73,14 @@ class GridViewHeaderCell: UICollectionReusableView, CellCreator {
         column3.font = UIFont.systemFont(ofSize: fontSize)
         column4.font = UIFont.systemFont(ofSize: fontSize)
         column5.font = UIFont.systemFont(ofSize: fontSize)
+        column6.font = UIFont.systemFont(ofSize: fontSize)
         
         column1.textColor = UIColor.headerCellText
         column2.textColor = UIColor.headerCellText
         column3.textColor = UIColor.headerCellText
         column4.textColor = UIColor.headerCellText
         column5.textColor = UIColor.headerCellText
+        column6.textColor = UIColor.headerCellText
         
         stackView.axis = UILayoutConstraintAxis.horizontal
         stackView.distribution = UIStackViewDistribution.fillEqually
@@ -83,6 +92,7 @@ class GridViewHeaderCell: UICollectionReusableView, CellCreator {
         stackView.addArrangedSubview(column3)
         stackView.addArrangedSubview(column4)
         stackView.addArrangedSubview(column5)
+        stackView.addArrangedSubview(column6)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
         

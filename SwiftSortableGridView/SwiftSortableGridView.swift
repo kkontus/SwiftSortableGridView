@@ -149,8 +149,8 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
             supplementaryView.column2.text = gridColumns[1]
             supplementaryView.column3.text = gridColumns[2]
             supplementaryView.column4.text = gridColumns[3]
-            supplementaryView.column4.text = gridColumns[4]
-            supplementaryView.column5.text = gridColumns[5]
+            supplementaryView.column5.text = gridColumns[4]
+            supplementaryView.column6.text = gridColumns[5]
             
             return supplementaryView
         }
