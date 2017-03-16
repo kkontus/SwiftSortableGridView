@@ -105,7 +105,11 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
         collectionView.backgroundColor = UIColor.collectionViewBackgroundColor
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(GridViewCell.self, forCellWithReuseIdentifier: GridViewCell.identifier)
+        if useStickyHeader {
+            collectionView.register(GridViewForStickyCell.self, forCellWithReuseIdentifier: GridViewForStickyCell.identifier)
+        } else {
+            collectionView.register(GridViewForNonStickyCell.self, forCellWithReuseIdentifier: GridViewForNonStickyCell.identifier)
+        }
         collectionView.register(GridViewHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: GridViewHeaderCell.identifier)
         
         // add collection view to content view
@@ -122,22 +126,27 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridViewCell.identifier, for: indexPath) as! GridViewCell
-        cell.setData(items[indexPath.row])
+        let cell: GridViewCell?
+        if useStickyHeader {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridViewForStickyCell.identifier, for: indexPath) as! GridViewForStickyCell
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridViewForNonStickyCell.identifier, for: indexPath) as! GridViewForNonStickyCell
+        }
+        cell?.setData(items[indexPath.row])
         
         if cellDescription.index(forKey: String(indexPath.row)) != nil {
-            cell.setCellDescription(cellDescription[String(indexPath.row)])
+            cell?.setCellDescription(cellDescription[String(indexPath.row)])
         }
         
         let numberOfItems = items.count
         if useStickyHeader {
-            cell.setup(indexPath, range: cell.createColumnRange(0), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems), sortOrderIcon: sortOrderIcon, sortOrderColumn: sortOrderColumn)
+            cell?.setup(indexPath, range: (cell?.createColumnRange(0))!, rangeFooter: (cell?.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems))!, sortOrderIcon: sortOrderIcon, sortOrderColumn: sortOrderColumn)
         } else {
-            cell.setup(indexPath, range: cell.createColumnRange(numberOfColumns), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems), sortOrderIcon: sortOrderIcon, sortOrderColumn: sortOrderColumn)
+            cell?.setup(indexPath, range: (cell?.createColumnRange(numberOfColumns))!, rangeFooter: (cell?.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems))!, sortOrderIcon: sortOrderIcon, sortOrderColumn: sortOrderColumn)
         }
-        cell.delegate = delegate //we need this so we can sort collection view in controller, not in cell definition class
+        cell?.delegate = delegate //we need this so we can sort collection view in controller, not in cell definition class
         
-        return cell
+        return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -160,16 +169,20 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
     
     // MARK: - UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell: GridViewCell = collectionView.cellForItem(at: indexPath)! as! GridViewCell
+        let cell: GridViewCell?
+        if useStickyHeader {
+            cell = collectionView.cellForItem(at: indexPath)! as! GridViewForStickyCell
+        } else {
+            cell = collectionView.cellForItem(at: indexPath)! as! GridViewForNonStickyCell
+        }
         
         let numberOfItems = items.count
         
         if useStickyHeader {
-            cell.setupHeader(indexPath, range: cell.createColumnRange(0), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems), sortOrder: !sortOrder)
+            cell?.setupHeader(indexPath, range: (cell?.createColumnRange(0))!, rangeFooter: (cell?.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems))!, sortOrder: !sortOrder)
         } else {
-            cell.setupHeader(indexPath, range: cell.createColumnRange(numberOfColumns), rangeFooter: cell.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems), sortOrder: !sortOrder)
+            cell?.setupHeader(indexPath, range: (cell?.createColumnRange(numberOfColumns))!, rangeFooter: (cell?.createColumnRangeCustom(numberOfItems-numberOfColumns, endElement: numberOfItems))!, sortOrder: !sortOrder)
         }
-        
     }
     
     // MARK: - Collection View Delegate Flow Layout Methods

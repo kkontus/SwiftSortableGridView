@@ -19,13 +19,6 @@ class GridViewCell: UICollectionViewCell, CellCreator {
         return label
     }()
     
-    private let sortIcon: UIImageView = {
-        let image = UIImage(named: GridConfig.ascending)
-        let imageView = UIImageView(image: image!)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     class var identifier: String {
         return String.className(self)
     }
@@ -39,20 +32,14 @@ class GridViewCell: UICollectionViewCell, CellCreator {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
+    func setupViews() {
         nameLabel.font = UIFont.systemFont(ofSize: fontSize)
         
         addSubview(nameLabel)
-        addSubview(sortIcon)
         
         nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
         nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-        
-        sortIcon.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        sortIcon.widthAnchor.constraint(equalToConstant: 15).isActive = true
-        sortIcon.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        sortIcon.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     func setData(_ data: Any?) {
@@ -72,18 +59,6 @@ class GridViewCell: UICollectionViewCell, CellCreator {
     }
     
     func setup(_ indexPath: IndexPath, range: NSRange, rangeFooter: NSRange, sortOrderIcon: String?, sortOrderColumn: Int?) {
-        if let row = sortOrderColumn {
-            if row == indexPath.row {
-                let image = UIImage(named: sortOrderIcon!)
-                sortIcon.alpha = 1.0
-                sortIcon.image = image
-            } else {
-                sortIcon.alpha = 0.0
-            }
-        } else {
-            sortIcon.alpha = 0.0
-        }
-        
         if indexPath.row >= range.location && indexPath.row <= range.length {
             self.backgroundColor = UIColor.headerCell
             nameLabel.textColor = UIColor.headerCellText
