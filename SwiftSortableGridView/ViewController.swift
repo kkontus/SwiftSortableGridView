@@ -15,6 +15,7 @@ class ViewController: UIViewController, SortableGridView {
     private var sortOrderIcon: String? = GridConfig.defaultOrder // do not change this, it is an image set name
     private var sortOrderColumn: Int? = GridConfig.defaultColumn
     
+    // uncomment code below if you are not using AutoLayout, so the grid view is properly redrawn
     // Redraw Collection View if Orientation change occurrs
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -74,6 +75,8 @@ class ViewController: UIViewController, SortableGridView {
         
         // add grid to view
         self.view.addSubview(swiftSortableGridView)
+        // use line below if you using AutoLayout in code, otherwise comment the line below
+        // addLayoutConstraintsForGridView(swiftSortableGridView)
     }
     
     func sortGridView(_ order: Bool, column: Int, columnName: String?, sortOrderIcon: String?, sortOrderColumn: Int?) {
@@ -121,6 +124,31 @@ class ViewController: UIViewController, SortableGridView {
         self.swiftSortableGridView.sortOrderIcon = self.sortOrderIcon
         self.swiftSortableGridView.sortOrderColumn = self.sortOrderColumn
         self.swiftSortableGridView.reloadGridData(data: sortedArray)
+    }
+    
+    private func addLayoutConstraintsForGridView(_ newItem: UIView) {
+        //when using autolayout constraints in the code, we MUST ALWAYS SET translatesAutoresizingMaskIntoConstraints = false
+        newItem.translatesAutoresizingMaskIntoConstraints = false
+        
+        //pin N points from the top of the super
+        let topContraint = NSLayoutConstraint(item: newItem, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 50)
+        
+        //pin the view N points from the left edge of the the superview
+        //from the left edge of the view to the left edge of the superview
+        //superview X coord is at 0 therefore 0 + 20 = 20 position
+        let leadingContraint = NSLayoutConstraint(item: newItem, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: 0)
+        
+        //pin the view N points from the right edge of the superview
+        //negative because we want to pin -N points from the end of the superview.
+        //ie., if with of super view is 300, 300-20 = 280 position
+        let trailingContraint = NSLayoutConstraint(item: newItem, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: 0) //use this constant with negative (-N)
+        
+        //pin N points from the top of the super
+        let bottomContraint = NSLayoutConstraint(item: newItem, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        
+        //add the constrains.
+        //we pass an array of all the contraints
+        self.view.addConstraints([topContraint, leadingContraint, trailingContraint, bottomContraint])
     }
     
 }
