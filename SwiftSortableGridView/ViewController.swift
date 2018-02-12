@@ -70,7 +70,7 @@ class ViewController: UIViewController, SortableGridView {
         swiftSortableGridView.gridCellHeight = 30.0
         
         // draw grid
-        swiftSortableGridView.useStickyHeader = false
+        swiftSortableGridView.useStickyHeader = true
         swiftSortableGridView.drawGrid()
         
         // add grid to view

@@ -202,7 +202,7 @@ class SwiftSortableGridView: UIView, UIScrollViewDelegate, UICollectionViewDataS
         return 0.0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if useStickyHeader {
             return CGSize(width: collectionView.bounds.width, height: self.gridCellHeight)
         } else {
